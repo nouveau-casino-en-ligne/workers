@@ -9,7 +9,7 @@ const make=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.class
 const render=rows=>{container.replaceChildren();rows.forEach((item,index)=>{
   const row=make('div','compare-row');
   const logoBox=make('div','logo-box');logoBox.style.backgroundColor=safeColor(item.background_color);
-  const logo=document.createElement('img');logo.src=String(item.logo_url||'');logo.alt=item.brand?'Logo '+String(item.brand):'Logo';logo.loading=index<3?'eager':'lazy';logo.decoding='async';logoBox.appendChild(logo);row.appendChild(logoBox);
+  const logo=document.createElement('img');logo.src=String(item.logo_url||'');logo.alt=item.brand?'Logo '+String(item.brand):'Logo';logo.loading='eager';logo.decoding='async';logoBox.appendChild(logo);row.appendChild(logoBox);
 
   const brandWrap=make('div','brand-wrap');
   brandWrap.appendChild(make('div','brand',String(item.brand||'')));
